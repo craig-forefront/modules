@@ -1,22 +1,3 @@
-terraform {
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-    }
-  }
-
-  backend "s3" {
-    bucket         = "tf-backend-0001"
-    key            = "network/terraform.tfstate"
-    region         = "us-east-1"
-    dynamodb_table = "tf-lock-table"
-  }
-}
-
-provider "aws" {
-  profile = "default"
-  region  = "us-east-1"
-}
 
 resource "aws_s3_bucket" "mybucket" {
   bucket              = "sometest037540"
